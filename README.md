@@ -60,3 +60,6 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt update
 sudo apt install sublime-text
 ```
+
+#### DBeaver
+`wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb`
