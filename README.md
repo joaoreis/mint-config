@@ -22,6 +22,12 @@ sudo adduser $USER kvm
 sudo chown $USER /dev/kvm
 ```
 
+#### Alterar número máximo de notificações
+```
+echo "fs.inotify.max_user_watches = 524288" > /dev/sysctl.conf
+sudo sysctl -p --system    
+```
+
 ### Some Snap programs
 ```
 snap install slack
@@ -63,3 +69,26 @@ sudo apt install sublime-text
 
 #### DBeaver
 `wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb`
+
+
+### ULauncher
+`sudo add-apt-repository ppa:agornostal/ulauncher -y`
+`sudo apt update && apt install ulauncher -y`
+
+### Gestures
+#### Referencia: https://github.com/bulletmark/libinput-gestures
+```
+sudo gpasswd -a $USER input
+sudo apt install xdotool wmctrl libinput-tools -y
+```
+
+```
+git clone https://github.com/bulletmark/libinput-gestures.git
+cd libinput-gestures
+```
+`sudo make install (or sudo ./libinput-gestures-setup install)`
+
+```
+libinput-gestures-setup autostart
+libinput-gestures-setup start
+```
